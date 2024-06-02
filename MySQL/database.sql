@@ -1,0 +1,30 @@
+CREATE DATABASE roses;
+
+USE roses;
+
+CREATE TABLE users (
+    userid INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE messages (
+    messageid INT AUTO_INCREMENT PRIMARY KEY,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    sender VARCHAR(50) NOT NULL,
+    senderid INT NOT NULL,
+    receiver VARCHAR(50) NOT NULL,
+    receiverid INT NOT NULL,
+    message TEXT NOT NULL
+);
+
+CREATE TABLE sendingrose (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tanggal DATE NOT NULL,
+    messageid INT NOT NULL,
+    jumlahmawar INT NOT NULL CHECK (jumlahmawar <= 10)
+);
+
+ALTER TABLE messages ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE sendingrose ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
