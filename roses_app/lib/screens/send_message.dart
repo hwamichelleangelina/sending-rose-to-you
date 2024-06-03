@@ -41,8 +41,9 @@ class _SendMessageScreenState extends State<SendMessageScreen> {
         'message': _message,
       };
 
+      const baseUrl = 'http://localhost:5000';
       final response = await http.post(
-        Uri.parse('http://localhost:5000/messages/send-message'),
+        Uri.parse('$baseUrl/messages/send-message'),
         headers: {
           'Content-Type': 'application/json',
         },

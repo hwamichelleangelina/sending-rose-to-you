@@ -54,7 +54,9 @@ class _InboxScreenState extends State<InboxScreen> {
       throw Exception('No username found in SharedPreferences');
     }
 
-    final response = await http.get(Uri.parse('http://localhost:5000/messages/my-messages/$username'));
+    const baseUrl = 'http://localhost:5000';
+
+    final response = await http.get(Uri.parse('$baseUrl/messages/my-messages/$username'));
 
     if (response.statusCode == 200) {
       List<dynamic> body = jsonDecode(response.body)['messages'];

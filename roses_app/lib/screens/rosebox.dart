@@ -30,8 +30,9 @@ class _RoseBoxScreenState extends State<RoseBoxScreen> {
     if (username == null) {
       throw Exception("Username not found in shared preferences.");
     }
+    const baseUrl = 'http://localhost:5000';
 
-    final response = await http.get(Uri.parse('http://localhost:5000/roses/my-roses/$username'));
+    final response = await http.get(Uri.parse('$baseUrl/roses/my-roses/$username'));
 
     if (response.statusCode == 200) {
       final Map<String, dynamic> data = json.decode(response.body);

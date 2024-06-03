@@ -43,8 +43,9 @@ class _SendRoseScreenState extends State<SendRoseScreen> {
     };
 
     // Send rose data to backend
+    const baseUrl = 'http://localhost:5000';
     final response = await http.post(
-      Uri.parse('http://localhost:5000/roses/send-rose'),
+      Uri.parse('$baseUrl/roses/send-rose'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode(roseData),
     );

@@ -15,7 +15,8 @@ class AuthProvider with ChangeNotifier {
   }
 
   Future<void> register(String name, String username, String password) async {
-    const url = 'http://localhost:5000/auth/register';
+    const baseUrl = 'http://localhost:5000';
+    const url = '$baseUrl/auth/register';
     final response = await http.post(
       Uri.parse(url),
       body: json.encode({'name': name, 'username': username, 'password': password}),
