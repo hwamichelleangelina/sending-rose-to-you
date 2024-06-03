@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 
 // Middleware to parse JSON bodies
-app.use(express.json());
+app.use(bodyParser.json())
 
 // Middleware to parse URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
