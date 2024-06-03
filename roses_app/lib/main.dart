@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:roses_app/screens/home.dart';
+import 'package:roses_app/screens/rosebox.dart';
 import './providers/auth.dart';
 import 'screens/register.dart';
 import 'screens/login.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
             '/login': (ctx) => const LoginScreen(),
             '/register': (ctx) => const RegisterScreen(),
             '/inbox': (ctx) => const InboxScreen(),
+            '/rosebox': (ctx) => const RoseBoxScreen(),
             '/send-message': (ctx) => const SendMessageScreen(),
             '/send-rose': (ctx) => const SendRoseScreen(),
             '/home': (ctx) => const HomeScreen(),

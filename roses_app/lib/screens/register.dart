@@ -23,7 +23,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       Provider.of<AuthProvider>(context, listen: false)
           .register(_name, _username, _password)
           .then((_) {
-        Navigator.of(context).pushReplacementNamed('/home');
+        Navigator.of(context).pushReplacementNamed('/register');
       }).catchError((error) {
         showDialog(
           context: context,

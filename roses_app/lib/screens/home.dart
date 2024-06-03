@@ -71,17 +71,6 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 50),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/inbox');
-                },
-                  style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.all(10),
-                  minimumSize: const Size(250, 50),
-                ),
-                child: const Text('Go to Inbox', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
                   Navigator.of(context).pushNamed('/send-message');
                 },
                   style: ElevatedButton.styleFrom(
@@ -91,6 +80,19 @@ class HomeScreen extends StatelessWidget {
                 child: const Text('Send a Message', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               ),
               const SizedBox(height: 20),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/inbox');
+                },
+                  style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.all(10),
+                  minimumSize: const Size(250, 50),
+                ),
+                child: const Text('Go to Inbox', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              ),
+              const SizedBox(height: 40),
+
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed('/send-rose');
@@ -104,7 +106,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/roses');
+                  Navigator.of(context).pushNamed('/rosebox');
                 },
                   style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.all(10),

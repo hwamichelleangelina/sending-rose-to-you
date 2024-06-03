@@ -7,10 +7,10 @@ exports.register = (req, res) => {
 
     User.register({name, username, password}, (err, users) => {
         if (err) {
-            res.status(500).json({message: 'Error while registering user.'});
+            res.status(500).json({message: 'Error while registering user.', err});
         }
         else {
-            res.status(200).json({message: 'User successfully registered, please continue login.', users});
+            res.status(201).json({message: 'User successfully registered, please continue login.', users});
         }
     });
 }
